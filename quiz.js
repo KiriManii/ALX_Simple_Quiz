@@ -1,6 +1,6 @@
-// This is the function to check the user's answer
+// Function to check the user's answer
 function checkAnswer() {
-    // The correct answer is "4"
+    // Correct answer is "4"
     const correctAnswer = "4";
     
     // Get the user's selected answer
@@ -12,7 +12,7 @@ function checkAnswer() {
         return;
     }
 
-    // Compare user's answer to the correct answer
+    // Compare user's answer to the correct answer using the value property
     if (userAnswer.value === correctAnswer) {
         document.getElementById("feedback").textContent = "Correct! Well done.";
     } else {
@@ -21,4 +21,7 @@ function checkAnswer() {
 }
 
 // Add event listener to the "Submit Answer" button
-document.getElementById("submit-answer").addEventListener("click", checkAnswer);
+const submitButton = document.getElementById("submit-answer");
+if (submitButton) { // Check if the button exists
+    submitButton.addEventListener("click", checkAnswer);
+}
